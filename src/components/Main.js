@@ -1,4 +1,8 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
+import LanguageSelect from './LanguageSelect'
+import Search from './Search'
+import Glossary from './Glossary'
+
 
 class Main extends Component {
   constructor(props) {
@@ -6,7 +10,13 @@ class Main extends Component {
   }
 
   render() {
-    return()
+    return(
+      <>
+        <LanguageSelect />
+        <Search />
+        <Glossary />
+      </>
+    )
   }
 }
 

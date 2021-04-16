@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 
 class Glossary extends Component {
   constructor(props) {
@@ -6,7 +6,10 @@ class Glossary extends Component {
   }
 
   render() {
-    return()
+    return(
+      <>
+      </>
+    )
   }
 }
 
