@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
 
 export default class Header extends Component {
   constructor(props) {
@@ -7,16 +8,22 @@ export default class Header extends Component {
     this.state = {
       username: ""
     }
-    handleLogout = () => {
-      //call logout route
-    }
+    // handleLogout = () => {
+    //   //call logout route
+    // }
   }
 
   render() {
     return (
-      <nav>
-        //code
-      </nav>
+      <Navbar bg="light" expand="sm">
+        <Navbar.Brand href="#home">Monstera Language Academy</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse className="justify-content-end">
+          <Navbar.Text>
+            Signed in as: <a href="#login">Mark Otto</a>
+          </Navbar.Text>
+        </Navbar.Collapse>
+      </Navbar>
     )
   }
 }

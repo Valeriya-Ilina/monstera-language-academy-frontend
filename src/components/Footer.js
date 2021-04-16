@@ -1,13 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react';
 
-class Footer extends Component {
-  constructor(props) {
-    super(props)
-  }
-
-  render() {
-    return()
-  }
+function Footer(props) {
+  return(
+    <div className="footer">
+      <span>Team: Becky, Val 2021 </span>
+    </div>
+  )
 }
 
 export default Footer;
