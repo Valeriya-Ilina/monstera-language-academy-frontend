@@ -56,7 +56,7 @@ class Search extends Component {
             onChange={this.handleChange}
           />
           <Button type="submit" className="mb-2">
-            Submit
+            Search
           </Button>
         </InputGroup>
       </Form>

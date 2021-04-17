@@ -1,6 +1,6 @@
 import { Component } from 'react'
 
-class LanguageSelect extends Component {
+class Keyboard extends Component {
   constructor(props) {
     super(props)
   }
@@ -13,4 +13,4 @@ class LanguageSelect extends Component {
   }
 }
 
-export default LanguageSelect;
+export default Keyboard;

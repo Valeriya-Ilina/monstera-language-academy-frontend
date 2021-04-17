@@ -1,8 +1,8 @@
 import { Component } from 'react'
-import LanguageSelect from './LanguageSelect'
 import Search from './Search'
 import Glossary from './Glossary'
-
+import PracticeInfo from './PracticeInfo'
+import Keyboard from './Keyboard'
 
 class Main extends Component {
   constructor(props) {
@@ -11,11 +11,16 @@ class Main extends Component {
 
   render() {
     return(
-      <>
-        <LanguageSelect />
-        <Search />
-        <Glossary />
-      </>
+      <main>
+        <div id="search-container">
+          <Search />
+          <Keyboard />
+        </div>
+        <div id="learn-container">
+          <Glossary />
+          <PracticeInfo />
+        </div>
+      </main>
     )
   }
 }
