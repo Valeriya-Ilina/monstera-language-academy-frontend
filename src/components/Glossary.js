@@ -11,8 +11,8 @@ class Glossary extends Component {
   render() {
     return(
       <>
-        <p> List of Saved Words</p>
-        <Table bordered hover size="sm">
+        <Table bordered size="sm" id="table">
+        <p>List of Saved Words</p>
           <tbody>
             <tr>
               <td>

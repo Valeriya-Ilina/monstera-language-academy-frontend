@@ -3,6 +3,7 @@ import Search from './Search'
 import Glossary from './Glossary'
 import PracticeInfo from './PracticeInfo'
 import Keyboard from './Keyboard'
+import FlashCard from './FlashCard'
 
 class Main extends Component {
   constructor(props) {
@@ -12,14 +13,15 @@ class Main extends Component {
   render() {
     return(
       <main>
-        <div id="search-container">
+        {/*<div id="search-container">
           <Search />
           <Keyboard />
         </div>
         <div id="learn-container">
           <Glossary />
           <PracticeInfo />
-        </div>
+        </div>*/}
+        <FlashCard />
       </main>
     )
   }

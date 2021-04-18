@@ -8,6 +8,7 @@ class Keyboard extends Component {
   render() {
     return(
       <>
+        <h6>Keyboard goes here</h6>
       </>
     )
   }

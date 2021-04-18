@@ -1,3 +1,26 @@
 .App {
   text-align: center;
 }
+
+#search-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+#learn-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+#table {
+  width: 800px;
+}
+
+#card-container {
+  width: 450px;
+  height: 500px;
+  border: 1px solid blue;
+  border-radius: 15px;
+  margin: 45px auto;
+  background-color: lavender;
+}

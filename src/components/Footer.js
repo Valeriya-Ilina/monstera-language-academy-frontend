@@ -3,7 +3,7 @@ import React from 'react';
 function Footer(props) {
   return(
     <div className="footer">
-      <span>Team: Becky|github Val|github, 2021 </span>
+      <span>Team: Becky King-Reilly|<a href="https://github.com/BeckyDania">GitHub</a> Valeriya Ilina|<a href="https://github.com/Valeriya-Ilina">GitHub</a>, 2021 </span>
     </div>
   )
 }
