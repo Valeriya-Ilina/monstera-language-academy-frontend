@@ -12,17 +12,16 @@ class Main extends Component {
 
   render() {
     return(
-      <main>
-        {/*<div id="search-container">
+      <>
+        <div id="search-container">
           <Search />
           <Keyboard />
         </div>
         <div id="learn-container">
           <Glossary />
           <PracticeInfo />
-        </div>*/}
-        <FlashCard />
-      </main>
+        </div>
+      </>
     )
   }
 }

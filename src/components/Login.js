@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 
-class LoginForm extends Component {
+class Login extends Component {
   constructor(props) {
     super(props)
   }
 
   render() {
-    return()
+    return(
+      <h1>This is Login Form</h1>
+    )
   }
 }
 
-export default LoginForm;
+export default Login;

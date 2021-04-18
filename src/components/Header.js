@@ -17,6 +17,18 @@ export default class Header extends Component {
     return (
       <Navbar bg="light" expand="sm">
         <Navbar.Brand href="#home">Monstera Language Academy</Navbar.Brand>
+        <Nav.Item>
+          <Nav.Link onClick={this.props.setPage} id='main'>Main</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link onClick={this.props.setPage} id='flashcard'>FlashCard</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link onClick={this.props.setPage} id='login'>Login</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link onClick={this.props.setPage} id='signup'>SignUp</Nav.Link>
+        </Nav.Item>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
