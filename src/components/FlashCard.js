@@ -64,9 +64,11 @@ class FlashCard extends Component {
               return (
                 <Carousel.Item>
                   <h1 id="practice-word" className="d-block">{word.translateFrom}</h1>
-                  <h2> {this.state.answer} </h2>
+                  <div id="answer-container">
+                    <h2> {this.state.answer} </h2>
+                  </div>
                   <div className="mb-2">
-                    <Button variant="secondary" size="sm" onClick={()=>this.showAnswer(index)}>Show Answer</Button>
+                    <Button id="show-answer-btn" variant="secondary" size="sm" onClick={()=>this.showAnswer(index)}>Show Answer</Button>
                   </div>
                 </Carousel.Item>
               )
