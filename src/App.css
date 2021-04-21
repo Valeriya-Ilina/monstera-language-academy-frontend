@@ -33,3 +33,7 @@
 #answer-container {
   height: 150px;
 }
+
+.favorite {
+  font-weight: bold;
+}
