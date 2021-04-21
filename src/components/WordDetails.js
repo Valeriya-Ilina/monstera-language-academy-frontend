@@ -12,9 +12,15 @@ class WordDetails extends Component {
           <Accordion.Toggle as={Card.Header} eventKey={this.props.eventKey}>
             <Container>
               <Row>
-                <Col sm>{this.props.translateFrom}</Col>
-                <Col sm>{this.props.translateTo}</Col>
-                <Col sm><Button variant="primary" size="sm">
+                <Col sm
+                  onDoubleClick={() => this.props.toggleFavorite(this.props.word)}
+                    className={this.props.word.favorite
+                    ? 'favorite'
+                    :
+                    null}
+                >{this.props.word.text}</Col>
+                <Col sm>{this.props.word.translatedText}</Col>
+                <Col sm><Button variant="primary" size="sm" onClick={()=>this.props.deleteWord(this.props.word._id)}>
                     DELETE </Button>{' '}</Col>
               </Row>
             </Container>
