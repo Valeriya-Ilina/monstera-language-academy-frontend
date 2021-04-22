@@ -1,12 +1,25 @@
 import { Component } from 'react'
 import { Form, InputGroup, FormControl, Button } from 'react-bootstrap'
 
+
+console.log(process.env.NODE_ENV)
+let baseUrl = ''
+
+// more on React environment variables
+// https://create-react-app.dev/docs/adding-custom-environment-variables/
+if (process.env.NODE_ENV === 'development') {
+  baseUrl = 'http://localhost:3060'
+} else {
+  baseUrl = 'heroku url here'
+}
+
+
 class Search extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      baseURL: "http://localhost:3060/search",
+      baseURL: baseUrl + "/search",
       searchWordText: "",
       translateFrom: "en",
       translateTo: "ru",
@@ -26,6 +39,7 @@ class Search extends Component {
     console.log(this.state.translateTo)
     console.log(this.state.searchWordText)
 
+    // using fetch send POST request to BE with body
     const url = this.state.baseURL
     try {
       const response = await fetch(url, {
@@ -50,6 +64,33 @@ class Search extends Component {
       console.log('Error => ', err);
     }
   }
+
+  saveToGlossary = () => {
+    const url = baseUrl + '/glossary/'
+    const object = {
+      text: this.state.translationData.text ,
+      translatedText: this.state.translationData.translatedText,
+      translateFromLang: this.state.translationData.translateFromLang,
+      translateToLang: this.state.translationData.translateToLang
+    }
+
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(object),
+    })
+      .then(response => {
+          return response.json()
+      })
+      .then(json => {
+        this.props.glossary.push(json)
+        this.props.handleGlossaryChange(this.props.glossary)
+      },
+        err => console.log(err))
+  }
+
 
   render() {
     console.log(this.state)
@@ -183,6 +224,7 @@ class Search extends Component {
           <h3>Translated from language: {this.state.translationData.translateFromLang} </h3>
           <h3>Translated to language: {this.state.translationData.translateToLang} </h3>
           <h3>Translated text: {this.state.translationData.translatedText} </h3>
+          <Button variant="primary" size="sm" onClick={()=>this.saveToGlossary()}>Save to list of words</Button>{' '}
         </div>
       </>
 

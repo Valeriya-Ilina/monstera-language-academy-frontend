@@ -13,10 +13,10 @@ class Main extends Component {
     return(
       <>
         <div id="search-container">
-          <Search />
+          <Search glossary={this.props.glossary} handleGlossaryChange={this.props.handleGlossaryChange} />
         </div>
         <div id="learn-container">
-          <Glossary />
+          <Glossary glossary={this.props.glossary} handleGlossaryChange={this.props.handleGlossaryChange}/>
           <PracticeInfo />
         </div>
       </>
