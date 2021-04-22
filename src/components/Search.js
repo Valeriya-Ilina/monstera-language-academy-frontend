@@ -208,6 +208,7 @@ class Search extends Component {
           <InputGroup className="mb-3">
             <FormControl
               id="searchWordText"
+              maxlength = "50"
               aria-label="Default"
               aria-describedby="inputGroup-sizing-default"
               value={this.state.searchWordText}
