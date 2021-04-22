@@ -12,7 +12,14 @@ class App extends Component {
     super(props);
     this.state = {
       page: 'main',
+      glossary: []
     };
+  }
+
+  handleGlossaryChange = (glossaryArray) => {
+    this.setState({
+      glossary: glossaryArray
+    })
   }
 
   setPage = (event)=> {
@@ -24,7 +31,7 @@ class App extends Component {
   render() {
     let page;
     if(this.state.page === 'main') {
-      page = <Main />
+      page = <Main glossary={this.state.glossary} handleGlossaryChange={this.handleGlossaryChange}/>
     }
     else if(this.state.page === 'flashcard') {
       page = <FlashCard />
