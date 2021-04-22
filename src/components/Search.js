@@ -13,7 +13,20 @@ class Search extends Component {
       translationData: {}
     }
   }
+//No spaces
 
+handleKeyDown = (event) => {
+    if (event.key === " ") {
+      event.preventDefault();
+    }
+  };
+handleChange = (event) => {
+    if (event.currentTarget.value.includes(" ")) {
+      event.currentTarget.value = event.currentTarget.value.replace(/\s/g, "");
+    }
+  };
+ 
+//
   handleChange = (event) => {
     this.setState({ [event.target.id] : event.target.value })
   }
@@ -167,7 +180,9 @@ class Search extends Component {
           <InputGroup className="mb-3">
             <FormControl
               id="searchWordText"
-              maxlength = "50"
+              type="text"
+              onKeyDown={handleKeyDown} onChange={handleChange}
+              maxlength = "15"
               aria-label="Default"
               aria-describedby="inputGroup-sizing-default"
               value={this.state.searchWordText}
