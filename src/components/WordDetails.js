@@ -28,9 +28,8 @@ class WordDetails extends Component {
 
           <Accordion.Collapse eventKey={this.props.eventKey}>
             <Card.Body>
-              <div>Verb</div>
-              <div>Sound</div>
-              <div>Examples</div>
+              <div>From: {this.props.word.translateFromLang}</div>
+              <div>To: {this.props.word.translateToLang}</div>
             </Card.Body>
           </Accordion.Collapse>
         </Card>
