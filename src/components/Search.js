@@ -13,20 +13,7 @@ class Search extends Component {
       translationData: {}
     }
   }
-//No spaces
 
-handleKeyDown = (event) => {
-    if (event.key === " ") {
-      event.preventDefault();
-    }
-  };
-handleChange = (event) => {
-    if (event.currentTarget.value.includes(" ")) {
-      event.currentTarget.value = event.currentTarget.value.replace(/\s/g, "");
-    }
-  };
- 
-//
   handleChange = (event) => {
     this.setState({ [event.target.id] : event.target.value })
   }
@@ -66,6 +53,20 @@ handleChange = (event) => {
 
   render() {
     console.log(this.state)
+    //No spaces
+
+const handleKeyDown = (event) => {
+  if (event.key === " ") {
+    event.preventDefault();
+  }
+};
+const handleChange = (event) => {
+  if (event.currentTarget.value.includes(" ")) {
+    event.currentTarget.value = event.currentTarget.value.replace(/\s/g, "");
+  }
+};
+
+//
     return(
       <>
         <Form onSubmit={this.handleSubmit}>
