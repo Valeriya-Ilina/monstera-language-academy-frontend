@@ -59,7 +59,9 @@ class FlashCard extends Component {
 
   getGlossaryPractice = () => {
     // fetch glossary words for practice game from the backend
-    fetch(baseUrl + "/glossary")
+    fetch(baseUrl + "/glossary", {
+      credentials: "include" // SENDING COOKIES
+    })
     .then(res => { return res.json()
     }).then(data => {
       // filter to only favorite words

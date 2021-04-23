@@ -25,7 +25,9 @@ class Glossary extends Component {
 
   getGlossary = () => {
     // fetch glossary words from the backend
-    fetch(baseUrl + "/glossary")
+    fetch(baseUrl + "/glossary", {
+      credentials: "include", // SENDING COOKIES
+    })
     .then(res => { return res.json()
     }).then(data => {
         // update glossary in higher component App
@@ -38,7 +40,8 @@ class Glossary extends Component {
 
     try{
       const response = await fetch( url, {
-        method: 'DELETE'
+        method: 'DELETE',
+        credentials: "include" // SENDING COOKIES
       })
 
       if (response.status === 200){
@@ -63,6 +66,7 @@ class Glossary extends Component {
     try{
       const response = await fetch(url , {
         method: 'PATCH',
+        credentials: "include" // SENDING COOKIES
       })
 
       if (response.status === 200){
