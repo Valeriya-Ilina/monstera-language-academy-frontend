@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Form, Button } from 'react-bootstrap'
+import { applyBackgroundImage, clearBackgroundImage } from '../utils';
 
 class Login extends Component {
   constructor(props) {
@@ -12,6 +13,15 @@ class Login extends Component {
       authenticationResult: ''
     }
   }
+
+  componentDidMount() {
+    applyBackgroundImage()
+  }
+
+  componentWillUnmount() {
+    clearBackgroundImage()
+  }
+
 
   handleChange = (event) => {
     this.setState({ [event.target.id] : event.target.value })
@@ -58,15 +68,13 @@ class Login extends Component {
         <h1>Login</h1>
         <Form onSubmit={this.loggingUser}>
           <Form.Group controlId="username">
-            <Form.Label>Username</Form.Label>
             <Form.Control type="text" placeholder="Username" onChange={this.handleChange} />
           </Form.Group>
 
           <Form.Group controlId="password">
-            <Form.Label>Password</Form.Label>
             <Form.Control type="password" placeholder="Password" onChange={this.handleChange} />
           </Form.Group>
-          <Button variant="primary" type="submit">
+          <Button id="login-btn" variant="primary" type="submit">
             Login
           </Button>
         </Form>
