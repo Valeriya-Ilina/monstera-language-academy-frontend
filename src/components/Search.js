@@ -34,11 +34,6 @@ class Search extends Component {
   handleSubmit = async (event) => {
     event.preventDefault()
 
-    // TODO set default values in the dropdown
-    console.log(this.state.translateFrom)
-    console.log(this.state.translateTo)
-    console.log(this.state.searchWordText)
-
     // using fetch send POST request to BE with body
     const url = this.state.baseURL
     try {
@@ -50,7 +45,8 @@ class Search extends Component {
         }),
         headers: {
           'Content-Type': 'application/json'
-        }
+        },
+        credentials: "include" // SENDING COOKIES
       })
 
       let body = await response.json()
@@ -80,6 +76,7 @@ class Search extends Component {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(object),
+      credentials: "include" // SENDING COOKIES
     })
       .then(response => {
           return response.json()
