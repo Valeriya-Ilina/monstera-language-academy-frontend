@@ -6,10 +6,10 @@ class Login extends Component {
     super(props)
 
     this.state = {
-      url: 'http://localhost:3060/sessions',
+      baseUrl: 'http://localhost:3060',
       username: '',
       password: '',
-      response: ''
+      authenticationResult: ''
     }
   }
 
@@ -17,30 +17,38 @@ class Login extends Component {
     this.setState({ [event.target.id] : event.target.value })
   }
 
-  handleSubmit = (event) => {
+  loggingUser = async (event) => {
     event.preventDefault()
 
-    const data = {
+    const url = this.state.baseUrl + '/users/login'
+    const loginBody = {
       username: this.state.username,
       password: this.state.password
     }
-
-    fetch(this.state.url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    })
-      .then(response => {
-          return response.json()
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(loginBody),
+        credentials: "include" // SENDING COOKIES
       })
-      .then(json => this.setState({
-          repsonse: json.data,
-          username: '',
-          password: ''
-        }),
-        err => console.log(err))
+
+      if (response.status === 200) {
+        console.log("USER IS AUTHENTICATED")
+        this.props.setUsername(this.state.username)
+        this.props.setPage('main')
+      } else {
+        this.setState({
+          authenticationResult: "Oops, something went wrong"
+        })
+      }
+    }
+    catch (err) {
+      console.log('Error => ', err);
+    }
+
   }
 
   render() {
@@ -48,7 +56,7 @@ class Login extends Component {
     return(
       <div id="login-container">
         <h1>Login</h1>
-        <Form onSubmit={this.handleSubmit}>
+        <Form onSubmit={this.loggingUser}>
           <Form.Group controlId="username">
             <Form.Label>Username</Form.Label>
             <Form.Control type="text" placeholder="Username" onChange={this.handleChange} />
@@ -62,6 +70,7 @@ class Login extends Component {
             Login
           </Button>
         </Form>
+        <p>{this.state.authenticationResult}</p>
       </div>
     )
   }
