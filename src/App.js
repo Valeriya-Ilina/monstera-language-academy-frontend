@@ -11,9 +11,16 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      page: 'main',
-      glossary: []
+      page: 'login',
+      glossary: [],
+      username: ''
     };
+  }
+
+  setUsername = (username) => {
+    this.setState({
+      username: username
+    })
   }
 
   handleGlossaryChange = (glossaryArray) => {
@@ -22,30 +29,30 @@ class App extends Component {
     })
   }
 
-  setPage = (event)=> {
+  setPage = (pageName) => {
     this.setState({
-      page: event.target.id
+      page: pageName
     });
   };
 
   render() {
     let page;
-    if(this.state.page === 'main') {
-      page = <Main glossary={this.state.glossary} handleGlossaryChange={this.handleGlossaryChange}/>
+    if(this.state.page === 'main' && this.state.username) {
+      page = <Main glossary={this.state.glossary} handleGlossaryChange={this.handleGlossaryChange} setPage={this.setPage}/>
     }
     else if(this.state.page === 'flashcard') {
       page = <FlashCard />
     }
     else if(this.state.page === 'signup') {
-      page = <Signup />
+      page = <Signup setUsername={this.setUsername} setPage={this.setPage}/>
     }
     else {
-      page = <Login />
+      page = <Login setUsername={this.setUsername} setPage={this.setPage}/>
     }
 
     return (
       <div className="App">
-        <Header setPage={this.setPage}/>
+        <Header setPage={this.setPage} username={this.state.username} setUsername={this.setUsername}/>
         <main>
           {page}
         </main>

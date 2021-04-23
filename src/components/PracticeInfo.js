@@ -10,7 +10,7 @@ class PracticeInfo extends Component {
   render() {
     return(
         <div className="mb-2">
-          <Button variant="secondary" size="lg">
+          <Button onClick={() => this.props.setPage('flashcard')} variant="secondary" size="lg">
             Knowledge check
           </Button>
         </div>

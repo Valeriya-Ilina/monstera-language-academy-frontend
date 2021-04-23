@@ -90,6 +90,7 @@ class Glossary extends Component {
       <>
         <Table bordered size="sm" id="table">
         <p>List of Saved Words</p>
+        <p classname='right-align'>* double-click to add to favorites</p>
           <tbody>
             <tr>
               <td>

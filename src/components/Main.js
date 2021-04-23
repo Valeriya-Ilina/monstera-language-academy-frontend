@@ -17,7 +17,7 @@ class Main extends Component {
         </div>
         <div id="learn-container">
           <Glossary glossary={this.props.glossary} handleGlossaryChange={this.props.handleGlossaryChange}/>
-          <PracticeInfo />
+          <PracticeInfo setPage={this.props.setPage}/>
         </div>
       </>
     )

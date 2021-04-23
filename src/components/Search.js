@@ -34,11 +34,6 @@ class Search extends Component {
   handleSubmit = async (event) => {
     event.preventDefault()
 
-    // TODO set default values in the dropdown
-    console.log(this.state.translateFrom)
-    console.log(this.state.translateTo)
-    console.log(this.state.searchWordText)
-
     // using fetch send POST request to BE with body
     const url = this.state.baseURL
     try {

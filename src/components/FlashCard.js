@@ -20,36 +20,6 @@ class FlashCard extends Component {
     this.state = {
       answer: "",
       glossaryPractice: []
-      // glossary: [
-      //   {
-      //     translateFrom: 'Hello',
-      //     translateTo: 'Ciao'
-      //   },
-      //   {
-      //     translateFrom: 'Goodbye',
-      //     translateTo: 'Arrivederci'
-      //   },
-      //   {
-      //     translateFrom: 'Hi',
-      //     translateTo: 'Привет'
-      //   },
-      //   {
-      //     translateFrom: 'Привет',
-      //     translateTo: 'Bonjour'
-      //   },
-      //   {
-      //     translateFrom: 'Having fun',
-      //     translateTo: 'Divirtiéndose'
-      //   },
-      //   {
-      //     translateFrom: 'Hello world',
-      //     translateTo: 'Hola Mundo'
-      //   },
-      //   {
-      //     translateFrom: 'What\'s up',
-      //     translateTo: 'Qué pasa'
-      //   }
-      // ]
     }
   };
 
@@ -91,7 +61,7 @@ class FlashCard extends Component {
       <div id="practice-container">
         <Carousel id='card-container' interval={null} indicators={false} onSlide={this.handleSlide}>
           {
-            //each itteration it returns a carousel item component
+            //each iteration it returns a carousel item component
             this.state.glossaryPractice.map((word, index) => {
               return (
                 <Carousel.Item>
