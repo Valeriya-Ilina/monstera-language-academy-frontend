@@ -30,6 +30,9 @@ This app will include a pronunciation feature for the translated words.
 Provide an on-screen keyboard for languages with another writing system
 Users can browse a dictionary of words - by category - traveling.
 
+## This is the wireframe of the initial architecture of the app
+![alt text](https://files.slack.com/files-pri/T0351JZQ0-F01UCETGA1H/image_from_ios.jpg)
+
 [contributors-shield]: https://img.shields.io/badge/Contributores-2-green.svg
 [contributors-url]: https://github.com/BeckyDania/monstera-language-academy-backend/graphs/contributors
 
