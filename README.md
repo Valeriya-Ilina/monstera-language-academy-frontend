@@ -13,9 +13,15 @@ This is an interactive language app where users create and sign into their custo
 * Bcrypt
 * Google Translate API
 
-# Dependencies
+## Dependencies
 * CORS
 * Method-Override
+
+## User Story
+* The user will be able to signup to create a profile and login to their saved profile.
+* The user can choose a target language to study
+* The user can search, save and modify a list of  oral and written translations of specific words in their profile
+* The user can test their knowledge of the translated words with a Practice Page.
 
 ## Forthcoming Features
 This app will include a pronunciation feature for the translated words.
