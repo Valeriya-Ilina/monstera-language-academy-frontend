@@ -2,6 +2,13 @@
   text-align: center;
 }
 
+.background-image {
+  background-image: url("monstera-language-academy-login.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 #search-container {
   display: flex;
   justify-content: space-around;
@@ -36,4 +43,27 @@
 
 .favorite {
   font-weight: bold;
+}
+
+
+#login-container, #signup-container{
+  margin: auto;
+  width: 200px;
+  left: 50%;
+  right: 50%;
+}
+
+h1 {
+  color: #ebc340;
+}
+
+form input::placeholder{
+  color: #d3d1d3;
+  font-weight: 100;
+  letter-spacing: 4px;
+}
+
+#login-btn, #signup-btn {
+  background-color: #ebc340;
+  border-width: 0px;
 }
