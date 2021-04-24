@@ -10,7 +10,7 @@ let baseUrl = ''
 if (process.env.NODE_ENV === 'development') {
   baseUrl = 'http://localhost:3060'
 } else {
-  baseUrl = 'heroku url here'
+  baseUrl = 'https://monstera-language-academy-be.herokuapp.com'
 }
 
 
@@ -19,7 +19,6 @@ class Search extends Component {
     super(props)
 
     this.state = {
-      baseURL: baseUrl + "/search",
       searchWordText: "",
       translateFrom: "en",
       translateTo: "ru",
@@ -35,7 +34,7 @@ class Search extends Component {
     event.preventDefault()
 
     // using fetch send POST request to BE with body
-    const url = this.state.baseURL
+    const url = baseUrl + "/search"
     try {
       const response = await fetch(url, {
         method: 'POST',
@@ -62,7 +61,7 @@ class Search extends Component {
   }
 
   saveToGlossary = () => {
-    const url = baseUrl + '/glossary/'
+    const url = baseUrl + '/glossary'
     const object = {
       text: this.state.translationData.text ,
       translatedText: this.state.translationData.translatedText,
@@ -104,7 +103,7 @@ const handleChange = (event) => {
   }
 };
 
-//
+
     return(
       <>
         <Form onSubmit={this.handleSubmit}>

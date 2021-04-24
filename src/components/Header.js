@@ -9,7 +9,7 @@ let baseUrl = ''
 if (process.env.NODE_ENV === 'development') {
   baseUrl = 'http://localhost:3060'
 } else {
-  baseUrl = 'heroku url here'
+  baseUrl = 'https://monstera-language-academy-be.herokuapp.com'
 }
 
 export default class Header extends Component {
