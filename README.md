@@ -9,7 +9,8 @@ This is an interactive language app where users create and sign into their custo
 ## Built with
 * React
 * Bootstrap-React
-* [Backend](https://github.com/BeckyDania/monstera-language-academy-backend)* Express-Sessions
+* [Backend](https://github.com/BeckyDania/monstera-language-academy-backend)
+* Bcrypt
 * Google Translate API
 
 # Dependencies
