@@ -1,5 +1,5 @@
 # monstera-language-academy-frontend
-Backend for word translation app
+Frontend for word translation app
 <br>Team project -Valeriya Ilina &amp; BeckyDania</br>
 <br>[![Contributors][contributors-shield]][contributors-url]</br>
 
