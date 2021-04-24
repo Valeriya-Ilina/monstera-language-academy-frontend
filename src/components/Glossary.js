@@ -88,8 +88,8 @@ class Glossary extends Component {
   render() {
     return(
       <>
-        <Table bordered size="sm" id="table">
-        <p>List of Saved Words</p>
+        <Table borderless size="sm" id="table">
+        <h4>List of Saved Words</h4>
         <p classname='right-align'>* double-click to add to favorites</p>
           <tbody>
             <tr>
@@ -100,7 +100,7 @@ class Glossary extends Component {
                     ? this.props.glossary.map((word, index) => {
                       return (
                         // pass the whole word object via props
-                        <WordDetails word={word} eventKey={index} deleteWord={this.deleteWord} toggleFavorite={this.toggleFavorite}/>
+                        <WordDetails word={word} eventKey={index+1} deleteWord={this.deleteWord} toggleFavorite={this.toggleFavorite}/>
                       )
                     })
                     : ''

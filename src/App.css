@@ -9,14 +9,10 @@
   background-repeat: no-repeat;
 }
 
-#search-container {
+#search-container, #learn-container {
   display: flex;
-  justify-content: space-around;
-}
-
-#learn-container {
-  display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  margin-top: 30px;
 }
 
 #table {
@@ -28,7 +24,7 @@
   height: 500px;
   border: 1px solid white;
   border-radius: 15px;
-  margin: 45px auto;
+  margin: 80px auto;
   background-color: lavender;
   box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
@@ -45,6 +41,9 @@
   font-weight: bold;
 }
 
+#nav {
+  background-color: rgb(235, 195, 64);
+}
 
 #login-container, #signup-container{
   margin: auto;
@@ -53,8 +52,8 @@
   right: 50%;
 }
 
-h1 {
-  color: #ebc340;
+#login-container > h1, #signup-container > h1 {
+  color: white;
 }
 
 form input::placeholder{
@@ -66,4 +65,30 @@ form input::placeholder{
 #login-btn, #signup-btn {
   background-color: #ebc340;
   border-width: 0px;
+  color: rgba(0,0,0,.5)
+}
+
+#learn-container {
+  padding-bottom: 100px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: rgb(235, 195, 64);
+  width: 100%;
+}
+
+#brand {
+  color: rgba(0,0,0,.5);
+}
+
+.footer > span > a {
+  margin: 0px 5px 0px 5px;
+}
+
+.navbar-text > div > button {
+  margin-left: 15px;
 }

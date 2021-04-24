@@ -39,9 +39,9 @@ export default class Header extends Component {
 
   render() {
     return (
-      <Navbar bg="light" expand="sm">
+      <Navbar id='nav' expand="sm">
         <Navbar.Brand>
-          <Nav.Link onClick={() => this.props.setPage('main')} id='main'>Monstera Language Academy</Nav.Link>
+          <Nav.Link onClick={() => this.props.setPage('main')} id='brand'>Monstera Language Academy</Nav.Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="justify-content-end">
@@ -54,8 +54,8 @@ export default class Header extends Component {
                 </div>
               :
               <Nav className="justify-content-end">
-                <Nav.Link onClick={() => this.props.setPage('login')} id='login'>Login</Nav.Link>
                 <Nav.Link onClick={() => this.props.setPage('signup')} id='signup'>SignUp</Nav.Link>
+                <Nav.Link onClick={() => this.props.setPage('login')} id='login'>Login</Nav.Link>
               </Nav>
 
             }

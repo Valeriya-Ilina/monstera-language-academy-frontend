@@ -66,6 +66,7 @@ class FlashCard extends Component {
               return (
                 <Carousel.Item>
                   <h1 id="practice-word" className="d-block">{word.text}</h1>
+                  <h6 className="d-block">Translate to: {word.translateToLang}</h6>
                   <div id="answer-container">
                     <h2> {this.state.answer} </h2>
                   </div>

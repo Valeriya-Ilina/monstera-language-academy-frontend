@@ -20,7 +20,7 @@ class WordDetails extends Component {
                     null}
                 >{this.props.word.text}</Col>
                 <Col sm>{this.props.word.translatedText}</Col>
-                <Col sm><Button variant="primary" size="sm" onClick={()=>this.props.deleteWord(this.props.word._id)}>
+                <Col sm><Button variant="secondary" size="sm" onClick={()=>this.props.deleteWord(this.props.word._id)}>
                     DELETE </Button>{' '}</Col>
               </Row>
             </Container>

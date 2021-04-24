@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import { Form, InputGroup, FormControl, Button } from 'react-bootstrap'
+import { Form, InputGroup, FormControl, Button, Table } from 'react-bootstrap'
 
 
 console.log(process.env.NODE_ENV)
@@ -20,8 +20,7 @@ class Search extends Component {
 
     this.state = {
       searchWordText: "",
-      translateFrom: "en",
-      translateTo: "ru",
+      translateTo: "en",
       translationData: {}
     }
   }
@@ -108,7 +107,7 @@ const handleChange = (event) => {
       <>
         <Form onSubmit={this.handleSubmit}>
           <Form.Group controlId="translateTo">
-          <Form.Label>Translate To</Form.Label>
+          <h4>Translate To</h4>
             <Form.Control as="select" size="sm" onChange={this.handleChange} custom>
               <option value="af">Afrikaans</option>
               <option value="sq">Albanian</option>
@@ -120,7 +119,7 @@ const handleChange = (event) => {
               <option value="cs">Czech</option>
               <option value="da">Danish</option>
               <option value="nl">Dutch</option>
-              <option value="en">English</option>
+              <option selected value="en">English</option>
               <option value="en-au">English (Australia)</option>
               <option value="en-uk">English (United Kingdom)</option>
               <option value="en-us">English (United States)</option>
@@ -145,7 +144,7 @@ const handleChange = (event) => {
               <option value="pt">Portuguese</option>
               <option value="pt-br">Portuguese (Brazil)</option>
               <option value="ro">Romanian</option>
-              <option selected value="ru">Russian</option>
+              <option value="ru">Russian</option>
               <option value="sr">Serbian</option>
               <option value="sk">Slovak</option>
               <option value="es">Spanish</option>
@@ -172,21 +171,49 @@ const handleChange = (event) => {
               value={this.state.searchWordText}
               onChange={this.handleChange}
             />
-            <Button type="submit" className="mb-2">
+            <Button type="submit" className="mb-2" variant="secondary">
               Search
             </Button>
           </InputGroup>
         </Form>
 
         <div>
-          <h3>Text: {this.state.translationData.text} </h3>
-          <h3>Translated from language: {this.state.translationData.translateFromLang} </h3>
-          <h3>Translated to language: {this.state.translationData.translateToLang} </h3>
-          <h3>Translated text: {this.state.translationData.translatedText} </h3>
-          <Button variant="primary" size="sm" onClick={()=>this.saveToGlossary()}>Save to list of words</Button>{' '}
+
+
+        <Table size="md">
+          <tbody>
+            <tr>
+              <td>
+                <h4>Text: </h4>
+              </td>
+              <td>{this.state.translationData.text}</td>
+            </tr>
+            <tr>
+              <td>
+                <h4>Translated from language: </h4>
+              </td>
+              <td>{this.state.translationData.translateFromLang}</td>
+            </tr>
+            <tr>
+              <td>
+                <h4>Translated to language: </h4>
+              </td>
+              <td>{this.state.translationData.translateToLang}</td>
+            </tr>
+            <tr>
+              <td>
+                <h4>Translated text: </h4>
+              </td>
+              <td>{this.state.translationData.translatedText}</td>
+            </tr>
+          </tbody>
+        </Table>
+
+        <Button variant="secondary" size="sm" onClick={()=>this.saveToGlossary()}>Save to list of words</Button>{' '}
+
+
         </div>
       </>
-
     )
   }
 }
