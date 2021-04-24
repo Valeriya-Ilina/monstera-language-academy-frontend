@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Form, Button, InputGroup } from 'react-bootstrap'
+import { applyBackgroundImage, clearBackgroundImage } from '../utils';
 
 
 console.log(process.env.NODE_ENV)
@@ -22,6 +23,14 @@ class Signup extends Component {
       password: '',
       response: '',
     }
+  }
+
+  componentDidMount() {
+    applyBackgroundImage()
+  }
+
+  componentWillUnmount() {
+    clearBackgroundImage()
   }
 
   handleChange = (event) => {
@@ -66,7 +75,6 @@ class Signup extends Component {
         <h1>Signup</h1>
         <Form onSubmit={this.signupUser}>
           <Form.Group controlId="username">
-            <Form.Label>Username</Form.Label>
             <Form.Control
               required
               type="text"
@@ -76,7 +84,6 @@ class Signup extends Component {
           </Form.Group>
 
           <Form.Group controlId="password">
-            <Form.Label>Password</Form.Label>
             <Form.Control
               required
               type="password"
@@ -85,7 +92,7 @@ class Signup extends Component {
             />
           </Form.Group>
 
-          <Button variant="primary" type="submit">
+          <Button id="signup-btn" variant="primary" type="submit">
             Create User
           </Button>
         </Form>
