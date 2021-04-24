@@ -1,12 +1,23 @@
 import React, { Component } from 'react'
 import { Form, Button, InputGroup } from 'react-bootstrap'
 
+
+console.log(process.env.NODE_ENV)
+let baseUrl = ''
+
+// more on React environment variables
+// https://create-react-app.dev/docs/adding-custom-environment-variables/
+if (process.env.NODE_ENV === 'development') {
+  baseUrl = 'http://localhost:3060'
+} else {
+  baseUrl = 'https://monstera-language-academy-be.herokuapp.com'
+}
+
 class Signup extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      baseUrl: 'http://localhost:3060',
       username: '',
       password: '',
       response: '',
@@ -20,7 +31,7 @@ class Signup extends Component {
   signupUser = async (event) => {
     event.preventDefault()
 
-    const url = this.state.baseUrl + '/users/signup'
+    const url = baseUrl + '/users/signup'
     const signupBody = {
       username: this.state.username,
       password: this.state.password
