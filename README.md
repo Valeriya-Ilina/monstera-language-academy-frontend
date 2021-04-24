@@ -31,7 +31,7 @@ Provide an on-screen keyboard for languages with another writing system
 Users can browse a dictionary of words - by category - traveling.
 
 ## This is the wireframe of the initial architecture of the app
-![picture](Image from iOS.jpg)
+![picture](https://github.com/Valeriya-Ilina/monstera-language-academy-frontend/blob/854e14754608dddcbb602f0638a6a5d643908cc3/Image%20from%20iOS.jpg)
 
 [contributors-shield]: https://img.shields.io/badge/Contributores-2-green.svg
 [contributors-url]: https://github.com/BeckyDania/monstera-language-academy-backend/graphs/contributors
